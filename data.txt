@@ -1,5 +1,0 @@
-Skyler	White	H	Negra Arroyo Lane	308	Alburquerque	NM	United States	87881	887-919-1313	skyler@bb.com	F
-Bruce	Wayne	M	Wayne Manor		Gotham City	NH	Badland	1333-9992	772-212-9931	bruce@wayneindustries.com	M
-Fred	Flintstone	J	342 Gravelpit Terrace	Apt 1766	Bedrock	OK	United States	11223	229-009-1123	fred@slaterock.com	M
-Chanandler	Bong	C	92 Bedford St.	Apt 20	Ney York	NY	USA	10014	(201)-998-1213	cbing@friends.com	F
-SpongeBob	Squarepants		124 Conch Street	Pineapple	Bikini Bottom	PO	Earth	00000	(201)-212-1212	spongebosdjhgsjhdgshjgdfjhsgfjsgfkjsafkqhsfsqb@bikinibottom.oc	M
