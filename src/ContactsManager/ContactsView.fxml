@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * Name: Harsha Deep Reddy V
+ * 
+ * Date: 14 Sep 2014 
+ * Purpose of this module: This is the main fxml class for the file. This file contains all the elements for the 
+ *                         project. This is also the view part of the project.
+ -->
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.Insets?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import ContactsManager.*?>
+
+<GridPane prefHeight="780.0" prefWidth="850.0" style="-fx-background-color: white;" stylesheets="@StyleSheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ContactsManager.ContactsView_UI_Backend">
+   <children>
+        <StackPane id="titlepane" prefHeight="40.0" GridPane.columnSpan="2">
+           <children>
+            <HBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@contacts_icon.png" />
+                     </image>
+                  </ImageView>
+                    <Label id="title" fx:id="titleLabel" text="CONTACTS MANAGER" />
+               </children>
+            </HBox>
+           </children>
+        </StackPane>
+   
+        <TableView fx:id="tableView" onMouseClicked="#tableMouseClick" prefWidth="475.0" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+             <columns>
+                 <TableColumn fx:id="nameColumn" maxWidth="-1.0" minWidth="170.0" prefWidth="-1.0" text="NAME">                
+                     <cellValueFactory>
+                          <PropertyValueFactory property="fullName" />
+                     </cellValueFactory>
+                 </TableColumn>
+                 <TableColumn fx:id="phoneColumn" editable="false" maxWidth="-1.0" minWidth="130.0" prefWidth="-1.0" text="PHONE">
+                     <cellValueFactory>
+                         <PropertyValueFactory property="phoneNumber" />
+                     </cellValueFactory>
+                 </TableColumn>
+             </columns>
+             <sortOrder>
+                 <fx:reference source="nameColumn" />
+             </sortOrder>
+        </TableView>
+
+        <VBox fx:id="fieldsVBox" prefWidth="375.0" spacing="5.0" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <children>
+            <HBox prefHeight="20.0">
+               <children>
+                  <Label text="PROGRESS">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                     <padding>
+                        <Insets top="3.0" />
+                     </padding>
+                  </Label>
+                  <ProgressBar fx:id="progressBar" prefWidth="275.0" progress="0.59">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ProgressBar>
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </HBox>
+            <Label text="FIRST NAME">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+                   <TextFieldLimited fx:id="firstNameField" maxWidth="-Infinity" prefWidth="350.0" promptText="e.g. Walter" />
+            <Label text="LAST NAME">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+                   <TextFieldLimited fx:id="lastNameField" maxWidth="-Infinity" prefWidth="350.0" promptText="e.g. White" />
+            <Label text="MIDDLE INITIAL">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+                   <TextFieldLimited fx:id="middleNameField" maxWidth="-Infinity" prefWidth="350.0" promptText="e.g. H" />
+            <Label text="ADDRESS 1">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>             
+                   <TextFieldLimited fx:id="address1Field" maxWidth="-Infinity" prefWidth="350.0" promptText="e.g. Negra Arroyo Lane" />
+            <Label text="ADDRESS 2">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+                   <TextFieldLimited fx:id="address2Field" maxWidth="-Infinity" prefWidth="350.0" promptText="e.g. 308" />
+            <Label text="CITY">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+                   <TextFieldLimited fx:id="cityField" maxWidth="-Infinity" prefWidth="350.0" promptText="e.g. Albuquerque" />
+            <Label text="STATE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+                   <TextFieldLimited fx:id="stateField" maxWidth="-Infinity" prefWidth="350.0" promptText="e.g. NM" />
+            <Label text="COUNTRY">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+                   <TextFieldLimited fx:id="countryField" maxWidth="-Infinity" prefWidth="350.0" promptText="e.g. United States" />
+            <Label text="ZIP">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+                   <TextFieldLimited fx:id="zipField" maxWidth="-Infinity" prefWidth="350.0" promptText="e.g. 87104" />
+            <Label text="PHONE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+                  <TextFieldLimited fx:id="phoneField" maxWidth="-Infinity" prefWidth="350.0" promptText="e.g. (201)-992-1131" />
+            <Label text="EMAIL ADDRESS">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+                  <TextFieldLimited fx:id="emailField" maxWidth="-Infinity" prefWidth="350.0" promptText="e.g. walter@lospolloshermanos.nm" />
+            <Label text="GENDER">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+                  <TextFieldLimited fx:id="genderField" maxWidth="-Infinity" prefWidth="350.0" promptText="e.g. M or F" />
+            <HBox prefHeight="30.0" spacing="175.0" VBox.vgrow="NEVER">
+               <children>
+                         <Button fx:id="savePersonBtn" onAction="#savePerson" prefWidth="80.0" styleClass="safebuttons" text="SAVE">
+                     <padding>
+                        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                         <Button onAction="#cancelEdit" prefWidth="80.0" styleClass="unsafebuttons" text="CANCEL">
+                     <padding>
+                        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Label fx:id="errorMessageLabel" styleClass="errorMessage" text="">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+        </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+        </VBox>
+        <VBox fx:id="labelsVBox" prefWidth="375.0" spacing="12.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <children>
+        <HBox prefHeight="30.0" spacing="50.0">
+           <children>
+                <Button fx:id="addPersonBtn" onAction="#addPerson" prefWidth="80.0" styleClass="safebuttons" text="ADD">
+                 <padding>
+                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                 </padding>
+                </Button>
+                     <Button fx:id="editPersonBtn" onAction="#editPerson" prefWidth="80.0" styleClass="safebuttons" text="EDIT">
+                 <padding>
+                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                 </padding>
+                </Button>
+                <Button fx:id="deletePersonBtn" alignment="CENTER" contentDisplay="CENTER" onAction="#deletePerson" prefWidth="80.0" styleClass="unsafebuttons" text="DELETE">
+                 <padding>
+                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                 </padding>
+                </Button>
+           </children>
+           <padding>
+              <Insets right="5.0" top="5.0" />
+           </padding>
+        </HBox>
+        <Separator prefWidth="200.0">
+           <VBox.margin>
+              <Insets bottom="-5.0" right="10.0" />
+           </VBox.margin>
+        </Separator>
+        <Label text="NAME">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+               <Label fx:id="firstNameLabel" textOverrun="CLIP">
+           <font>
+              <Font size="18.0" />
+           </font>
+        </Label>
+        <Separator prefWidth="200.0">
+           <padding>
+              <Insets right="10.0" />
+           </padding>
+               <VBox.margin>
+                  <Insets bottom="-5.0" />
+               </VBox.margin>
+        </Separator>
+        <Label text="PHONE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+               <Label fx:id="phoneLabel">
+           <font>
+              <Font size="18.0" />
+           </font>
+        </Label>
+            <Label text="EMAIL">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="emailLabel">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+        <Separator prefWidth="200.0">
+           <padding>
+              <Insets right="10.0" />
+           </padding>
+               <VBox.margin>
+                  <Insets bottom="-5.0" />
+               </VBox.margin>
+        </Separator>
+        <Label text="ADDRESS 1">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+               <Label fx:id="address1Label">
+           <font>
+              <Font size="18.0" />
+           </font>
+        </Label>
+        <Label text="ADDRESS 2">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+               <Label fx:id="address2Label">
+           <font>
+              <Font size="18.0" />
+           </font>
+        </Label>
+        <Label text="CITY">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+               <Label fx:id="cityLabel">
+           <font>
+              <Font size="18.0" />
+           </font>
+        </Label>
+        <Label text="STATE">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+               <Label fx:id="stateLabel">
+           <font>
+              <Font size="18.0" />
+           </font>
+        </Label>
+            <Label text="COUNTRY">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="countryLabel">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+        <Label text="ZIP">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+               <Label fx:id="zipLabel">
+           <font>
+              <Font size="18.0" />
+           </font>
+        </Label>
+        <Separator prefWidth="200.0">
+           <padding>
+              <Insets right="10.0" />
+           </padding>
+               <VBox.margin>
+                  <Insets bottom="-5.0" />
+               </VBox.margin>
+        </Separator>
+        <Label text="GENDER">
+               <font>
+                  <Font size="11.0" />
+               </font></Label>
+               <Label fx:id="genderLabel">
+           <font>
+              <Font size="18.0" />
+           </font>
+        </Label>
+       </children>
+     <padding>
+        <Insets left="10.0" />
+     </padding>
+    </VBox>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+
+</GridPane>
